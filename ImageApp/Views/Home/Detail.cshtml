@@ -1,0 +1,25 @@
+﻿@model Person
+@{
+    ViewData["Title"] = "Detail";
+}
+
+<h3 class="bg-info text-white text-center">Detail</h3>
+
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <div class="card p-3 shadow">
+                <img src="@Model.ImgeUrl" class="card-img-top img-thumbnail" alt="No Image To Show" style="height:60%" />
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item text-primary text-center">@Model.Id</li>
+                    <li class="list-group-item text-primary text-center">@Model.Name</li>
+                    <li class="list-group-item text-primary text-center">@Model.ImgeUrl</li>
+                </ul>
+                <div class="card-footer d-grid">
+                    <a class="btn btn-outline-warning mb-2" asp-action="Edit" asp-route-id="@Model.Id"><i class="fas fa-user-edit fa-2x"></i> Edit</a>
+                    <a asp-action="Index" class="btn btn-outline-secondary"><i class="fas fa-arrow-circle-left fa-2x"></i> Back To List</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

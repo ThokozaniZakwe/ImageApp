@@ -1,0 +1,29 @@
+﻿@model IEnumerable<Person>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 class="bg-primary text-white text-center my-4 rounded">People</h1>
+
+<a class="btn btn-primary text-center text-white p-2 m-2 rounded" asp-action="Create"><i class="fas fa-plus"></i> Create</a>
+
+<table class="table table-striped table-sm table-bordered text-center m-2 p-3">
+    <thead class="bg-info">
+        <tr>
+            <th>ID</th><td>Name</td><th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var p in Model)
+        {
+        <tr>
+            <td>@p.Id</td>
+            <td>@p.Name</td>
+            <td><a class="btn btn-info text-white" asp-action="Detail" asp-route-id="@p.Id"><i class="fas fa-book-open"></i> Detail</a>
+            <a class="btn btn-secondary" asp-action="Edit" asp-route-id="@p.Id"><i class="fas fa-user-edit"></i> Edit</a>
+            <a class="btn btn-danger" asp-action="Delete" asp-route-id="@p.Id"><i class="fas fa-trash-alt"></i> Delete</a></td>
+        </tr>
+        }
+    </tbody>
+</table>
+
